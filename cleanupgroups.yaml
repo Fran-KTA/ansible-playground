@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+
+    - name: Remove group operadores
+      group:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - operadores
+        - operadebian
+        - operaredhat
+

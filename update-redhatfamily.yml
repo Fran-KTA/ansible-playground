@@ -1,0 +1,2 @@
+- name: Update to latest
+  yum:  name='*' state=latest  update_cache=true
