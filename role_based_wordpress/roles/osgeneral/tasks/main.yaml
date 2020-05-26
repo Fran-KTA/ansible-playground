@@ -1,0 +1,25 @@
+- name: Create group operadores
+  group:
+    name: "{{ oper_group }}"
+    state: present
+
+- debug:
+    var: users
+
+- name: Create users
+  user:
+    name: "{{ item.name }}"
+    comment: "{{ item.comment }}"
+    groups: "{{ item.groups }}"
+    #append: yes
+  with_items: "{{ users }}"
+
+- name: Distribute ssh_key
+  authorized_key:
+    user: "{{ item.name }}"
+    state: present
+    key: "{{ lookup('file', 'files/id_ed25519.pub') }}"
+  with_items: "{{ users }}"
+
+- name: Update by family
+  include: "update-{{ ansible_os_family | lower }}family.yml"

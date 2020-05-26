@@ -1,0 +1,11 @@
+- name: Set /root permissions
+  file:
+    path: "/root"
+    owner: "root"
+    group: "root"
+    mode: "0700"
+
+- name: Install base security utils
+  package:
+    name: "{{ pkg_list }}"
+    state: "latest"

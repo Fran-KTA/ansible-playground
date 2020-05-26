@@ -1,0 +1,4 @@
+pkg_list:
+  - rkhunter
+  - fail2ban
+  - aide

@@ -1,0 +1,4 @@
+users:
+  - "{'name': 'operador1', 'comment': 'Operador numero 1', 'groups': '{{ oper_group }},{{ sudoer_group }}'}"
+  - "{'name': 'operador2', 'comment': 'Operador numero 2', 'groups': '{{ oper_group }},{{ sudoer_group }}'}"
+  - "{'name': 'operador3', 'comment': 'Operador numero 3', 'groups': '{{ oper_group }},{{ sudoer_group }}'}"

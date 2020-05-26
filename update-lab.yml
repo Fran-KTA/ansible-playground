@@ -1,5 +1,0 @@
-- hosts: all
-#  strategy: free
-  tasks:
-    - name: Update by family
-      include: "update-{{ ansible_os_family | lower }}family.yml"
